@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#ALL FILES UPLOADED - CREDITS 🌟 - @Sunrises_24
 from datetime import datetime
 from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 from pyrogram.filters import command, regex, create
