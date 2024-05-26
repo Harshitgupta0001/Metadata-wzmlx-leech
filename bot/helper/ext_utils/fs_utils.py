@@ -1,4 +1,4 @@
-#ALL FILES UPLOADED - CREDITS 🌟 - @Sunrises_24
+
 
 #!/usr/bin/env python3
 from aiofiles.os import remove as aioremove, path as aiopath, listdir, rmdir, makedirs
