@@ -77,6 +77,7 @@ async def get_media_info(path, metadata=False):
     tags = fields.get('tags', {})
     artist = tags.get('artist') or tags.get('ARTIST') or tags.get("Artist")
     title = tags.get('title') or tags.get('TITLE') or tags.get("Title")
+    movie_name = tags.get('MOVIE name') or tags.get('Movie Name') or tags.get('Movie Name') or tags.get('MOVIE NAME') or tags.get("movie name")
     return duration, artist, title
 
 
