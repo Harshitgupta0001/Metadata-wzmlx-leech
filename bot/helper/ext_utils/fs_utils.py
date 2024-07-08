@@ -193,4 +193,4 @@ async def edit_metadata(listener, base_dir: str, media_file: str, outfile: str, 
         await move(outfile, base_dir)
     else:
         await clean_target(outfile)
-        LOGGER.error('%s. Changing metadata failed, Path %s', await listener.suproc.stderr.read().decode(), media_file)
+        LOGGER.error('%s. Changing metadata failed, Path %s', (await listener.suproc.stderr.read()).decode(), media_file)
