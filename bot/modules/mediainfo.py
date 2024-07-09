@@ -50,8 +50,8 @@ async def gen_mediainfo(message, link=None, media=None, mmsg=None):
         await editMessage(temp_send, f"MediaInfo Stopped due to {str(e)}")
     finally:
         await aioremove(des_path)
-    link_id = (await telegraph.create_page(title='MediaInfo X', content=tc))["path"]
-    await temp_send.edit(f"<b>MediaInfo:</b>\n\n➲ <b>Link :</b> https://graph.org/{link_id}", disable_web_page_preview=False)
+    link_id = (await telegraph.create_page(title='Mediainfo X', content=tc))["path"]
+    await temp_send.edit(f"<b>Μ€ĐƗΔƗŇ₣Ø:</b>\n\n➲ <b>L̷i̷n̷k̷ :</b> https://graph.org/{link_id}", disable_web_page_preview=False)
 
 
 section_dict = {'General': '🗒', 'Video': '🎞', 'Audio': '🔊', 'Text': '🔠', 'Menu': '🗃'}
