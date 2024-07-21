@@ -1,9 +1,9 @@
 
 # REQUIRED CONFIG
-BOT_TOKEN = "6890187667:AAGqE34TH8h1X7Jdt6R174alAPFLZ3WwgJk"                              # Require restart after changing it while bot running
+BOT_TOKEN = ""                              # Require restart after changing it while bot running
 OWNER_ID = "6062371459"                               # Require restart after changing it while bot running
-TELEGRAM_API = "20967142"                           # Require restart after changing it while bot running
-TELEGRAM_HASH = "94e4f21b715fed8857cdf8d065c30cce"                          # Require restart after changing it while bot running
+TELEGRAM_API = ""                           # Require restart after changing it while bot running
+TELEGRAM_HASH = ""                          # Require restart after changing it while bot running
 
 # OPTIONAL CONFIG
 USER_SESSION_STRING = ""                    # Require restart after changing it while bot running
