@@ -73,31 +73,31 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
     rclone_path = f'wcl/{user_id}.conf'
     user_dict = user_data.get(user_id, {})
     if key is None:
-        buttons.ibutton("ᴜɴɪᴠᴇʀꜱᴀʟ ꜱᴇᴛᴛɪɴɢꜱ ", f"userset {user_id} universal")
-        buttons.ibutton("ᴍɪʀʀᴏʀ ꜱᴇᴛᴛɪɴɢꜱ", f"userset {user_id} mirror")
-        buttons.ibutton("ʟᴇᴇᴄʜ ꜱᴇᴛᴛɪɴɢꜱ", f"userset {user_id} leech")
+        buttons.ibutton("𝖴𝖭𝖨𝖵𝖤𝖱𝖲𝖠𝖫 𝖲𝖤𝖳𝖳𝖨𝖭𝖦𝖲", f"userset {user_id} universal")
+        buttons.ibutton("𝖬𝖨𝖱𝖱𝖮𝖱 𝖲𝖤𝖳𝖳𝖨𝖭𝖦𝖲", f"userset {user_id} mirror")
+        buttons.ibutton("𝖫𝖤𝖤𝖢𝖧 𝖲𝖤𝖳𝖳𝖨𝖭𝖦𝖲", f"userset {user_id} leech")
         if user_dict and any(key in user_dict for key in list(fname_dict.keys())):
-            buttons.ibutton("ʀᴇꜱᴇᴛ ꜱᴇᴛᴛɪɴɢ", f"userset {user_id} reset_all")
-        buttons.ibutton("ᴄʟᴏꜱᴇ", f"userset {user_id} close")
+            buttons.ibutton("𝖱𝖤𝖲𝖤𝖳 𝖲𝖤𝖳𝖳𝖨𝖭𝖦", f"userset {user_id} reset_all")
+        buttons.ibutton("𝖢𝖫𝖮𝖲𝖤", f"userset {user_id} close")
 
         text = BotTheme('USER_SETTING', NAME=name, ID=user_id, USERNAME=f'@{from_user.username}', LANG=Language.get(lc).display_name() if (lc := from_user.language_code) else "N/A", DC=from_user.dc_id)
         
         button = buttons.build_menu(1)
     elif key == 'universal':
         ytopt = 'Not Exists' if (val:=user_dict.get('yt_opt', config_dict.get('YT_DLP_OPTIONS', ''))) == '' else val
-        buttons.ibutton(f"{'✅️' if ytopt != 'Not Exists' else ''} ʏᴛ-ᴅʟᴘ ᴏᴘᴛɪᴏɴꜱ", f"userset {user_id} yt_opt")
+        buttons.ibutton(f"{'✅️' if ytopt != 'Not Exists' else ''} 𝖸𝖳-𝖣𝖫𝖯 𝖮𝖯𝖳𝖨𝖮𝖭𝖲", f"userset {user_id} yt_opt")
         u_sess = 'Exists' if user_dict.get('usess', False) else 'Not Exists'
-        buttons.ibutton(f"{'✅️' if u_sess != 'Not Exists' else ''} ᴜꜱᴇʀ ꜱᴇꜱꜱɪᴏɴ", f"userset {user_id} usess")
+        buttons.ibutton(f"{'✅️' if u_sess != 'Not Exists' else ''} 𝖴𝖲𝖤𝖱 𝖲𝖤𝖲𝖲𝖨𝖮𝖭", f"userset {user_id} usess")
         bot_pm = "Enabled" if user_dict.get('bot_pm', config_dict['BOT_PM']) else "Disabled"
-        buttons.ibutton('ᴅɪꜱᴀʙʟᴇ ʙᴏᴛ ᴘᴍ' if bot_pm == 'Enabled' else 'ᴇɴᴀʙʟᴇ ʙᴏᴛ ᴘᴍ', f"userset {user_id} bot_pm")
+        buttons.ibutton('𝖣𝖨𝖲𝖠𝖡𝖫𝖤 𝖡𝖮𝖳 𝖯𝖬' if bot_pm == 'Enabled' else '𝖤𝖭𝖠𝖡𝖫𝖤 𝖡𝖮𝖳 𝖯𝖬', f"userset {user_id} bot_pm")
         if config_dict['BOT_PM']:
             bot_pm = "Force Enabled"
         mediainfo = "Enabled" if user_dict.get('mediainfo', config_dict['SHOW_MEDIAINFO']) else "Disabled"
-        buttons.ibutton('ᴅɪꜱᴀʙʟᴇ ᴍᴇᴅɪᴀɪɴꜰᴏ' if mediainfo == 'Enabled' else 'ᴇɴᴀʙʟᴇ ᴍᴇᴅɪᴀɪɴꜰᴏ', f"userset {user_id} mediainfo")
+        buttons.ibutton('𝖣𝖨𝖲𝖠𝖡𝖫𝖤 𝖬𝖤𝖣𝖨𝖠𝖨𝖭𝖥𝖮' if mediainfo == 'Enabled' else '𝖤𝖭𝖠𝖡𝖫𝖤 𝖬𝖤𝖣𝖨𝖠𝖨𝖭𝖥𝖮', f"userset {user_id} mediainfo")
         if config_dict['SHOW_MEDIAINFO']:
             mediainfo = "Force Enabled"
-        save_mode = "ꜱᴀᴠᴇ ᴀꜱ ᴅᴜᴍᴘ" if user_dict.get('save_mode') else "ꜱᴀᴠᴇ ᴀꜱ ʙᴏᴛᴘᴍ"
-        buttons.ibutton('ꜱᴀᴠᴇ ᴀꜱ ʙᴏᴛᴘᴍ' if save_mode == 'ꜱᴀᴠᴇ ᴀꜱ ᴅᴜᴍᴘ' else 'ꜱᴀᴠᴇ ᴀꜱ ᴅᴜᴍᴘ', f"userset {user_id} save_mode")
+        save_mode = "𝖲𝖠𝖵𝖤 𝖠𝖲 𝖣𝖴𝖬𝖯" if user_dict.get('save_mode') else "𝖲𝖠𝖵𝖤 𝖠𝖲 𝖡𝖮𝖳𝖯𝖬"
+        buttons.ibutton('𝖲𝖠𝖵𝖤 𝖠𝖲 𝖡𝖮𝖳𝖯𝖬' if save_mode == '𝖲𝖠𝖵𝖤 𝖠𝖲 𝖣𝖴𝖬𝖯' else '𝖲𝖠𝖵𝖤 𝖠𝖲 𝖣𝖴𝖬𝖯', f"userset {user_id} save_mode")
         dailytl = config_dict['DAILY_TASK_LIMIT'] or "∞"
         dailytas = user_dict.get('dly_tasks')[1] if user_dict and user_dict.get('dly_tasks') and user_id != OWNER_ID and config_dict['DAILY_TASK_LIMIT'] else config_dict['DAILY_TASK_LIMIT'] or "️∞" if user_id != OWNER_ID else "∞"
         if user_dict.get('dly_tasks', False):
@@ -174,7 +174,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         ldump = 'Not Exists' if (val:=user_dict.get('ldump', '')) == '' else len(val)
 
         lmeta = 'Not Exists' if (val:=user_dict.get('lmeta', config_dict.get('METADATA', ''))) == '' else val
-        buttons.ibutton(f"{'✅️' if lmeta != 'Not Exists' else ''} •••´º´•» 𝐌𝐞𝐭𝐚𝐝𝐚𝐭𝐚 «•´º´•••", f"userset {user_id} lmeta")
+        buttons.ibutton(f"{'✅️' if lmeta != 'Not Exists' else ''} 𝖬𝖤𝖳𝖠𝖣𝖠𝖳𝖠", f"userset {user_id} lmeta")
                 
         text = BotTheme('LEECH', NAME=name, DL=f"{dailyll} / {dailytlle}",
                 LTYPE=ltype, THUMB=thumbmsg, SPLIT_SIZE=split_size,
